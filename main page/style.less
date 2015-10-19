@@ -1,0 +1,666 @@
+@import "reset.less";
+@import "variable.less";
+@import "mixins.less";
+
+/*основной стиль */
+body{
+	background-image: url(images/main.jpg);
+    color: @colortext;
+    font-family: sans-serif;
+}
+
+/*главный блок*/
+.main{
+    width: 960px;
+    margin: 0 auto;
+}
+
+a{
+    color: @green;
+}
+
+/*логин и пароль*/
+.psw{
+    text-align: right;
+    height: 27px;
+    padding-top: @padding-top;
+    padding-bottom: 10px;
+}
+
+.placeholder{
+    .textHeadingMixin;
+    padding-left: 7px;
+    padding-bottom: 2px;
+    height: 17px;
+    font-weight: bold;
+}
+
+.button{
+    background-color: @green;
+    border-radius: @radius;
+    border-color: @green;
+    height: 27px;
+    width: 65px;
+    
+}
+
+/*блок header*/
+header{
+    height: 200px;
+}
+
+/*первое меню в header*/
+.menu{
+    height: 36px;
+}
+
+.menu_right{
+    float: right; 
+    margin-right: -20px;
+    letter-spacing: 20px;
+}
+
+.menu ul{
+    background: @darkgrey;
+    text-align: left;
+    padding-left: @padding-left;
+    .borderTopRadius;
+    
+    li{
+        display: inline-block;
+        padding: 10px 20px 10px 0;
+        
+            a{
+                .textHeadingMixin;
+                text-decoration: none;
+
+                &:hover{
+                    color: @green;
+                    }
+            }
+    }
+}
+
+/*логотип*/
+.site{
+    float: left;
+    height: 115px;
+    background-color: @grey;
+    
+    h1{
+        .textHeadingMixin(@font-size: 29px);
+        font-weight: bold;
+        margin-top: 25px;
+        padding: 20px 0 20px 20px;
+
+        span{
+            color: @green;
+        }
+    }
+}
+
+.logo{
+    height: 115px;
+    background-color: @grey;
+
+    img{
+    float: right;
+    height: 75px;
+    width: auto;
+    margin: 20px 10px 20px 20px;
+    }
+}
+
+/*второе меню в header*/
+.menu_2{
+    width: 960px;
+    height: 50px;
+    background-color: @green;
+    .borderBottom-radius;
+    
+    ul{  
+        li{
+           float: left;
+            
+             a{
+                .textHeadingMixin(@font-size: 17px);
+                text-decoration: none;
+                font-weight: bold;
+                border-right: 1px ridge;
+                border-color: @lightgreen;
+                display: block;
+                padding: 16px 17px;
+             }
+            
+             &:hover a{
+                background: @white;
+                color: @black;
+                        }
+            
+             &:first-child:hover > a{
+                border-bottom-left-radius: @radius*2;
+                                 }
+            
+            input{
+                margin: 15px 0 20px 175px;
+                text-align: justify;
+                height: 20px;
+                padding-bottom: 5px;
+                word-spacing: 105px;
+                }
+        }
+    }
+}
+
+/*блок главной игры*/
+.egg_defender{
+    width: 960px;
+    height: 250px;
+    margin-top: 15px;
+    background-color: @grey;
+    border-radius: @radius*2; 
+}
+
+.egg_defender__img img{
+    height: 240px;
+    float: left;
+    width: 661px;
+}
+
+.egg_defender__text{
+    float: right; 
+    width: 279px;
+    height: 240px;
+    margin-left: 20px;
+    margin-top: 10px;
+    
+    p{
+        padding-right: 10px;
+        font-size: 15px;
+        .longTextMixin(@height: 92px; @line-clamp:6);
+        }
+
+    h1{
+        a{
+            color: @green;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            }
+    }
+    
+    h2{
+        .textHeadingMixin(@font-size: 20px);
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        }
+    
+    input{
+        background: @green;
+        border-color: @green;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: @white;
+        border-radius: @radius;
+        height: 30px;
+        width: 140px;
+        margin-top: 15px;
+        }
+}
+
+/*блок левой колонки*/
+.content{
+    width: 640px;
+    margin-right: 25px;
+    margin-top: 15px;
+    float: left;
+}
+
+/*блок новостей*/
+.news{
+    background-color: @grey;
+    border-radius: @radius*2;
+    height: 855px;
+   
+    hr{
+       .hrMixin;
+        }
+}
+.heading {
+    height: 30px;
+    background-color: @lightgrey;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @white;
+    padding: 20px 0 0 20px;
+    border-bottom: 1px ridge;
+    border-color: @darkgrey;
+    .borderTopRadius;
+}
+
+.news__list{
+    margin-top: 15px;
+    
+    li{
+        font-size: 11px;
+        font-weight: bold;
+        width: 95px;
+        padding-left: 30px;
+        padding-right: 30px;
+        display: inline-block;
+        vertical-align: top;
+        line-height: 15px;
+
+        a{
+            text-decoration: none;
+            font-size: 13px;
+            }
+        
+        img{
+            border-radius: 20%;
+            border: 2px solid;
+            border-color: @white;
+            width: 95px;
+            }
+    }
+}
+
+.reading{
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-left: @padding-left;
+}
+
+/*блок игры 1,2,3*/
+article{
+    background-color: @grey;
+    margin-top: 20px;
+    height: 310px;
+    width: 640px;
+    border-radius: @radius*2;
+
+    input{
+        background-color: @green;
+        border-radius: @radius;
+        border-color: @green;
+        color: @white;
+        }
+}
+
+.games{
+    clear: both;
+    margin-top: @margin-top;
+
+    img{
+        float: left;
+        margin: 0px 10px 10px 20px;
+        }
+    
+    p{
+        padding-top: @padding-top;
+        font-size: 14px;
+        padding-right: 10px;
+        .longTextMixin;
+        }
+   
+    h4{
+        a{
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            }
+    }
+    
+    h5{
+        .textHeadingMixin(@font-size: 15px);
+        font-weight: bold;
+        padding-top: @padding-top;
+        }
+}
+
+.games_p{
+    padding-top: @padding-top;
+    padding-left: @padding-left;
+    font-size: 11px;
+    
+    time{
+    float: right;
+    padding-right: 10px;
+    }
+}
+.games_b{
+    background-color: @colorButton;
+	color: @white;
+	border-color: @colorButton;
+	border-radius: 7px;
+	margin-top: 16px;
+	padding: 5px 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.rating{
+    clear: both;
+    margin-top: 15px;
+    
+    ul{
+        padding-left: @padding-left;
+   
+        li{
+            float: left;
+            font-size: 11px;
+            }
+    }
+}
+
+.star-rating{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 50px;
+    height: 10px;
+    position: relative;
+    background: url(images/stars.png);
+
+    li{
+        float: left;
+        margin: 0;
+        padding: 0;
+       
+        a{
+            display: block;
+            width: 10px;
+            height: 10px;
+            text-indent: -9999px;
+            position: absolute;
+            text-decoration: none;
+            z-index: 10;
+
+            &:hover{
+                background: url(images/stars.png) left center;
+                left: 0;
+                z-index: 2;
+                }
+        }
+    }
+}
+
+.star1{
+    left: 0;
+
+    &:hover{
+        width: @starwidth;
+    }
+}
+
+.star2{
+    left: @starheight;
+
+    &:hover{
+        width: @starwidth*2;
+    }
+}
+
+.star3{
+    left: @starheight*2;
+
+    &:hover{
+        width: @starwidth*3;
+    }
+}
+
+.star4{
+    left: @starheight*3;
+
+    &:hover{
+        width: @starwidth*4;
+    }
+}
+
+.star5{
+    left: @starheight*4;
+
+    &:hover{
+        width: @starwidth*5;
+    }
+}
+
+.current{
+    background: url(images/stars.png) left bottom;    
+    height: @starheight;
+    width: @starwidth*3.5;
+    z-index: 1;
+}
+
+.rating_comments{
+    margin-right: 110px;
+}
+
+/*блок правой колонки*/
+aside{
+    float: right;
+    width: 295px;
+    border-radius: @radius*2;
+    margin-top: 15px;
+}
+
+/*блок популярное*/
+.popular{
+    height: 380px;
+    background-color: @grey;
+    .borderBottom-radius;
+    
+    ul{
+        padding-left: @padding-left;
+        padding-top: @padding-top;
+            li{
+                a{
+                    font-size: 13px;
+                    font-weight: bold;
+                    line-height: 25px;
+                    text-decoration: none;
+                    border-bottom: 1px dotted @green;
+                }
+            }
+    }
+}
+
+/*блок наша гордость*/
+.pride{
+    margin-top: @margin-top;
+    background-color: @grey;
+    .borderBottom-radius;
+    height: 310px;
+}
+.pride_1{
+    clear: both;
+    margin-bottom: 10px;
+    padding-top: @padding-top;
+    
+    img{
+        float:left;
+        padding: 0 10px 10px 20px;
+        border-radius: @radius*2;
+        }
+    
+    a{
+        font-size: 15px;
+    }
+    
+    p{
+        padding-top: @padding-top/2;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+}
+
+/*блок рекламы*/
+.advertising{
+    margin-top: @margin-top;
+    background-color: @grey;
+    height: 380px;
+    .borderBottom-radius;
+}
+.yandex{
+    font-weight: bold;
+    margin-bottom: 15px;
+    
+    &:first-letter{
+        color: red;
+    }
+}
+.advertising__text{
+    padding: 10px 10px 10px 20px;;
+    color: @white;
+
+    ul{
+        li{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/*блок соцсети*/
+.socialnetwork{
+    margin-top: @margin-top;
+    background-color: @grey;
+    font-weight: bold;
+    height: 390px;
+    .borderBottom-radius;
+}
+
+#vk_groups{
+    margin-top: @margin-top;
+    margin-left: 47px;
+}
+
+/*блок облака тэгов*/
+.tags{
+    margin-top: @margin-top;
+    background-color: @grey;
+    height: 410px;
+    font-weight: bold;
+    .borderBottom-radius;
+}
+
+.tags__text{
+    margin-top: 15px;
+
+    a{
+        padding-left: @padding-left;
+
+        &:hover{
+            color: @green;
+        }
+    }
+}
+.smaller{
+	text-decoration: none;
+	color: @white;
+	font-size: 12px; 
+}
+
+.small{
+	text-decoration: none;
+	color: @white;
+	font-size: 15px; 
+}
+
+.big{
+	text-decoration: none;
+	color: @white;
+	font-size: 30px; 
+}
+
+.biger{
+	text-decoration: none;
+	color: @white;
+	font-size: 25px; 
+}
+
+/*блок страниц*/
+.pages{
+    margin: 0 auto;
+    width:350px;
+
+    ul{
+        li{
+            display: inline-block;
+            float: left;
+            margin: 10px;
+            
+            a{
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.number{
+    display: block;
+    height: 12px;
+    width: 12px;
+    padding-top: 2px;
+    padding-left: 4px;
+    border-radius: 3px;
+    
+    &:hover{
+        background: @white;
+        color: @black;
+        text-decoration: none;
+    }
+}
+
+/*подвал*/
+footer{
+    width: 960px;
+    clear: both;
+    padding-top: @padding-top*2;
+
+    hr{
+        .hrMixin;
+    }
+    
+    ul{
+        li{
+            display: inline-block;
+            float: left;
+            margin: 20px;
+
+            a{
+                color: @colortext;
+                text-decoration: none;
+                font-size: 12px;
+                
+                &:hover{
+                    color: @green;
+                }
+            }
+        }
+    }
+}
+
+.site_footer {
+    float: right;
+
+    h1{
+        .textHeadingMixin(@font-size: 25px);
+        font-weight: bold;
+        margin-top: @margin-top;
+        padding-right: 20px;
+        margin-bottom: 10px;
+
+        span{
+	       color: @green;
+        }
+    }
+}
+.site_copy{
+    font-size: 10px;
+    margin-bottom: 10px;
+    float: right;
+    padding-right: 20px;
+}

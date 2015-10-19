@@ -1,0 +1,35 @@
+.borderBottom-radius{    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.borderTopRadius{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.hrMixin{
+    border: none;
+    color: #464646;
+    background-color: #464646;
+    height: 1px;
+}
+     
+.textHeadingMixin(@font-size: 12px){
+    color: white;
+    font-size: @font-size;
+    text-transform: uppercase;
+}
+     
+.longTextMixin(@height: 55px; @line-clamp:4){
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 1;
+    height: @height;
+    -webkit-line-clamp: @line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
